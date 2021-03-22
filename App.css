@@ -1,0 +1,30 @@
+body{
+  background-color: rgb(179, 186, 187);
+}
+.app{
+  background-color: rgb(219, 119, 119);
+  height: 500px;
+  width: 400px;
+  margin: 40px auto;
+}
+#todoform input{
+  background-color: rgb(143, 38, 38);
+  border: 0px;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 0 20px;
+  margin: 20px;
+  color: white;
+}
+#todoform input::placeholder{
+  color:rgb(202, 211, 209);
+}
+#todoform button{
+ height: 40px;
+ width: 80px;
+ border-radius: 5px;
+ border: 0px;
+
+}
+

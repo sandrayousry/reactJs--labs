@@ -1,0 +1,33 @@
+.list{
+    color: #fff;
+    width: 300px;
+    margin: 20px auto;
+    height: 50px;
+    background-color: rgb(82, 185, 219);
+    border-radius: 5px;
+}
+.list p{
+    padding: 10px;
+    position: relative;
+    transition: ease-in-out;
+}
+.list p input{
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+}
+.list p input:focus{
+    outline: none;
+}
+.list p span{
+    position: absolute;
+    right: 0px;
+}
+.deletebtn{
+    margin: 0 5px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
