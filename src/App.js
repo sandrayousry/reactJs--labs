@@ -1,74 +1,50 @@
 import React, { Component } from 'react';
-import './App.css';
-import Buttons from './Buttons';
-import Result from './Result';
+import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.css";
+import Login from "./Login";
+import Movies from "./Movies";
+import Home from "./Home";
+class App extends Component {
+    state = {  }
+    render() { 
+        return (
+            <BrowserRouter>
+            <div >
+              <nav >
+                <ul>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/Login">Login</Link>
+                  </li>
+                  <li>
+                    <Link to="/Movies">Movies</Link>
+                  </li>
+                </ul>
+              </nav>
+      
+              {/* A <Switch> looks through its children <Route>s and
+                  renders the first one that matches the current URL. */}
+              <Switch>
+                <Route path="/Login">
+                  <Login />
+                </Route>
+                <Route path="/Movies">
+                  <Movies />
+                </Route>
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </div>
+          </BrowserRouter>
 
-
-
-
-class App extends Component{
-  constructor(){
-    super();
-    this.state={
-      result:""
+          
+        );
+      }
+            
+         
     }
-  }onClick = button => {
-
-    if(button === "="){
-        this.calculate()
-    }
-
-    else if(button === "C"){
-        this.reset()
-    }
-    else if(button === "CE"){
-        this.backspace()
-    }
-
-    else {
-        this.setState({
-            result: this.state.result + button
-        })
-    }
-};
-
-calculate = () => {
-  try {
-      this.setState({
-          // eslint-disable-next-line
-          result: (eval(this.state.result) || "" ) + ""
-      })
-  } catch (e) {
-      this.setState({
-          result: "error"
-      })
-
-  }
-};
-
-reset = () => {
-  this.setState({
-      result: ""
-  })
-};
-
-backspace = () => {
-  this.setState({
-      result: this.state.result.slice(0, -1)
-  })
-};
-
-render() {
-  return (
-      <div>
-          <div className="calculator-body">
-              <Result result={this.state.result}/>
-              <Buttons onClick={this.onClick}/>
-          </div>
-      </div>
-  );
-}
-
-
-}
+ 
 export default App;
